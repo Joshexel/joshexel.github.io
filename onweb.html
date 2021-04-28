@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <style>
+    *{
+      background-color: #09CF09;
+      text-align: center;
+      font-family: sans-serif;
+    }
+    .h2{
+    font-size: large;
+    }
+    ::placeholder{
+      color: black;
+      opacity: 1;
+    }
+    </style>
+    <title>joshmos.html</title>
+  </head>
+  <h1><b>JOSHMOS TEST MODE</b></h1>
+  <h2><b>Equations</b></h2>
+  <body>
+    <p id = "write"><input type = "text" id = "x1" size = "1">X + <input type = "text" id = "c1" size = "1"> = 
+      <input type = "text" id = "x2" size = "1">X + <input type = "text" id = "c2" size = "1"><br>
+    X = <div id = "div"></div></p>
+    <button type = "button" onclick = "equasionSolve()">do calculations</button>
+  <br><br><br><br><br>
+    <h2>Pythagorean Theorem</h2>
+    <p><button type="button" onclick="pythagChaH()">Find The Hypotenuse</button>      <button onclick="pythagChaL()"type="button">Find a leg</button></p>
+    <p id="pythagCha"></p><br><br><br><br>
+    <h2>Circles</h2>
+    <p><button type = "button" onclick = "circleCha()">circumference</button>   
+        <button type = "button" onclick= "areaCha()">area</button></p>
+  <p id = "circlecha">
+  </p>
+  <br>
+  <br> 
+  <br>
+  <h2>Surface Area of Prisms</h2>
+  <p><button type = "button" onclick = "lsaCha()">LSAdg</button>
+    <button type = "button" onclick = "tsaCha()">TSA</button></p>
+    <p id = "saCha"></p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h2>Cylinders</h2>
+  <p><button type = "button" onclick = "clsaCha()">Surface Area</button>
+  
+    <button type = "button" onclick = "cvolCha()">volume</button></p>
+    <p id = "cyCha"></p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h2> Surface area of Cones and Pyramids</h2>
+    <p><button type = "button" onclick="coneCha()">Cones</button>   <button type = "button" onclick="pyraCha()">Pyramids</button></p>
+    <p id = "cones"></p>
+  <script>    function equasionSolve (){
+    var x1 = document.getElementById("x1").value;
+    var c1 = document.getElementById("c1").value;
+    var x2 = document.getElementById("x2").value;
+    var c2 = document.getElementById("c2").value;
+    x2 = x2 - x1;
+    c1 = c1 - c2;
+    c1 = c1 / x2;
+    document.getElementById("div").innerHTML = c1;
+}
+function findCir(){
+    var diam = document.getElementById("diam").value;
+    diam = diam*Math.PI;
+    diam = diam*100;
+    diam = Math.round(diam);
+    diam = diam/100;
+    document.getElementById("div2").innerHTML = diam;
+}
+function circleCha(){
+    document.getElementById("circlecha").innerHTML = "<input type = 'text' id = 'diam' placeholder = 'enter diameter'><br><div id = 'div2'></div><br><button type = 'button' onclick = 'findCir()'>do calculations</button>";
+    console.log("button was pressed");
+    document.getElementById("getRid").style.display = "none";
+}
+function areaCha(){
+    document.getElementById("circlecha").innerHTML = "<input type = 'text' id = 'area' placeholder='enter radius'> <br><div id = 'div3'></div><br><button type = 'button' onclick = 'findArea()'>do calculations</button>";
+}
+function findArea(){
+    var rad = document.getElementById("area").value;
+    rad = rad * rad;
+    rad = rad * Math.PI;
+    rad = rad * 100;
+    rad = Math.round(rad);
+    rad = rad/100;
+    document.getElementById("div3").innerHTML = rad;
+}
+function lsaCha(){
+    document.getElementById("saCha").innerHTML = "<input type = 'text' id = 'P' size = '4' placeholder='perimeter'>   <input type = 'text' id = 'h' size = '1' placeholder='hight'><div id = 'div4'></div><br><button type = 'button' onclick = 'calcLSA()'>do calculations</button>";
+}
+function calcLSA(){
+    var P = document.getElementById("P").value;
+    var h = document.getElementById("h").value;
+    P = P*h;
+    document.getElementById("div4").innerHTML = P;
+}
+function tsaCha(){
+    document.getElementById("saCha").innerHTML = "<input type = 'text' id = 'P' size = '4' placeholder='perimeter'>   <input type = 'text' id = 'h' size = '1' placeholder='hight'>   <input type = 'text' id = 'B' size = '1' placeholder='base'><div id = 'div4'></div><br><button type = 'button' onclick = 'calcTSA()'>do calculations</button>";
+}
+function calcTSA(){
+    var P = document.getElementById("P").value;
+    var h = document.getElementById("h").value;
+    var B = document.getElementById("B").value;
+    B = B*2;
+    P = P*h;
+    parseInt(P);
+    parseInt(B);
+    P = P + B;
+    document.getElementById("div4").innerHTML = P;
+}
+function clsaCha(){
+    document.getElementById("cyCha").innerHTML = "<input type = 'text' id = 'r' size = '2' placeholder='radius'> <input type = 'text' size = '2' id = 'h' placeholder='hight'> <div id = 'div5'></div><br><button type = 'button' onclick = 'calcCySA()'>do calculations</button>";
+}
+function calcCySA(){
+    var r = document.getElementById("r").value;
+    var h = document.getElementById("h").value;
+    var lsa;
+    var tsa;
+    console.log("hello");
+    lsa = Math.PI*2*r*h;
+    lsa = lsa * 100;
+    lsa = Math.round(lsa);
+    lsa = lsa/100;
+    tsa = lsa+Math.PI*2*r*r;
+    tsa = tsa * 100;
+    tsa = Math.round(tsa);
+    tsa = tsa/100;
+    console.log("it got here");
+    document.getElementById("div5").innerHTML = "LSA = " + lsa + " TSA =" + tsa;
+}
+function cvolCha(){
+    document.getElementById("cyCha").innerHTML = "<input type = 'text' id = 'r' size = '2' placeholder='radius'> <input type = 'text' size = '2' id = 'h' placeholder='hight'> <div id = 'div5'></div><br><button type = 'button' onclick = 'calcCyVol()'>do calculations</button>";
+}
+function calcCyVol(){
+    var radius = document.getElementById("r").value;
+    var hight = document.getElementById("h").value;
+    radius=radius*radius*Math.PI*hight;
+    radius=radius*100;
+    radius=Math.round(radius);
+    radius=radius/100;
+    document.getElementById("div5").innerHTML = radius;
+}
+function pythagChaH(){
+    document.getElementById("pythagCha").innerHTML = "<input type = 'text' id='a' placeholder='A' size='7'>squared + <input type='text' id='b' placeholder='B' size='7'>squared = C squared<br><div id='aDiv'></div><br><button type='button' onclick = 'pythag()'>do calculations</button></p>"
+}
+function pythagChaL(){
+    document.getElementById("pythagCha").innerHTML = "A squared + <input type='text' id='b' placeholder='B' size='7'>squared = <input type = 'text' id='c' placeholder='C' size='7'>squared<br><div id='aDiv'></div><br><button type='button' onclick = 'pythagLeg()'>do calculations</button></p>"
+}
+function pythag(){
+    var a = document.getElementById("a").value;
+    var b = document.getElementById("b").value;
+        a = a*a;
+        b = b*b;
+        a = a + b;
+        c = Math.sqrt(a);
+        document.getElementById("aDiv").innerHTML = c;
+    
+}
+function pythagLeg(){
+    var b = document.getElementById("b").value;
+    var c = document.getElementById("c").value;
+    c = parseInt(c)
+    b = parseInt(b)
+    var a;
+    b=b*b;
+    c=c*c;
+    a = c-b;
+    a = Math.sqrt(a);
+    document.getElementById("aDiv").innerHTML = a;
+}</script>
+  </body>
+</html>
