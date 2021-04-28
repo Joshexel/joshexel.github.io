@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <style>*{
+        background-color: #09CF09;
+        text-align: center;
+      }
+      .h2{
+      font-size: large;
+      }</style>
+    <title>joshmos.html</title>
+  </head>
+  <h1><b>JOSHMOS TEST MODE</b></h1>
+  <h2><b>Equations</b></h2>
+  <body>
+    
+  <p id = "write"><input type = "text" id = "x1" size = "1">X + <input type = "text" id = "c1" size = "1"> = 
+    <input type = "text" id = "x2" size = "1">X + <input type = "text" id = "c2" size = "1"><BR>
+  X = <div id = "div"></div></p>
+  <button type = "button" onclick = "equasionSolve()">do calculations</button>
+<br><br><br><br><br>
+  <h2>Circles</h2>
+  <p><button type = "button" onclick = "circleCha()">circumference</button>   
+      <button type = "button" onclick= "areaCha()">area</button></p>
+<p id = "circlecha">
+</p>
+<br>
+<br> 
+<br>
+<h2>Surface Area</h2>
+<p><button type = "button" onclick = "lsaCha()">LSA</button>
+  <button type = "button" onclick = "tsaCha()">TSA</button></p>
+  <p id = "saCha"></p>
+  <script>function equasionSolve (){
+    var x1 = document.getElementById("x1").value;
+    var c1 = document.getElementById("c1").value;
+    var x2 = document.getElementById("x2").value;
+    var c2 = document.getElementById("c2").value;
+    x2 = x2 - x1;
+    c1 = c1 - c2;
+    c1 = c1 / x2;
+    document.getElementById("div").innerHTML = c1;
+    }
+    function findCir(){
+    var diam = document.getElementById("diam").value;
+    diam = diam*3.14;
+    diam = diam*100;
+    diam = Math.round(diam);
+    diam = diam/100;
+    document.getElementById("div2").innerHTML = diam;
+    }
+    function circleCha(){
+        document.getElementById("circlecha").innerHTML = "enter diameter <br> <input type = 'text' id = 'diam'><br><div id = 'div2'></div><br><button type = 'button' onclick = 'findCir()'>do calculations</button>";
+        console.log("button was pressed");
+        document.getElementById("getRid").style.display = "none";
+    }
+    function areaCha(){
+        document.getElementById("circlecha").innerHTML = "enter radius <br> <input type = 'text' id = 'area'> <br><div id = 'div3'></div><br><button type = 'button' onclick = 'findArea()'>do calculations</button>";
+    }
+    function findArea(){
+        var rad = document.getElementById("area").value;
+        rad = rad * rad;
+        rad = rad * 3.14;
+        rad = rad * 100;
+        rad = Math.round(rad);
+        rad = rad/100;
+        document.getElementById("div3").innerHTML = rad;
+    }
+    function lsaCha(){
+        document.getElementById("saCha").innerHTML = "P     h <br> <input type = 'text' id = 'P' size = '1'>   <input type = 'text' id = 'h' size = '1'><div id = 'div4'></div><br><button type = 'button' onclick = 'calcLSA()'>do calculations</button>";
+    }
+    function calcLSA(){
+        var P = document.getElementById("P").value;
+        var h = document.getElementById("h").value;
+        P = P*h;
+        document.getElementById("div4").innerHTML = P;
+    }
+    function tsaCha(){
+        document.getElementById("saCha").innerHTML = "P     h     B<br> <input type = 'text' id = 'P' size = '1'>   <input type = 'text' id = 'h' size = '1'>   <input type = 'text' id = 'B' size = '1'><div id = 'div4'></div><br><button type = 'button' onclick = 'calcTSA()'>do calculations</button>";
+    }
+    function calcTSA(){
+        var P = document.getElementById("P").value;
+        var h = document.getElementById("h").value;
+        var B = document.getElementById("B").value;
+        B = B*2;
+        P = P*h;
+        parseInt(P);
+        parseInt(B);
+        P = P + B;
+        document.getElementById("div4").innerHTML = P;
+    }</script>
+  </body>
+</html>
