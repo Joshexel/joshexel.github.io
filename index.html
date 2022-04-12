@@ -18,14 +18,7 @@
     }
     </style>
   <title> joshmos.html </title>
-  
-  </head>
-  <body>
-      <p> Input your a, b, and c values <p>
-  <p><input type = "text" id = "a">x^2 + <input type = "text" id = "b">x + <input type = "text" id = "c"></p>
-    <button type="press" onclick="equasionSolve()">Find Roots</button>
-  <div id="div"></div>
-<script>    function equasionSolve (){
+  <script>    function equasionSolve (){
     var a = document.getElementById("a").value;
     var b = document.getElementById("b").value;
     var c = document.getElementById("c").value;
@@ -44,5 +37,12 @@
     document.getElementById("div").innerHTML = x1 + " and " x2 + " are your roots;
 }
 </script>
+  </head>
+  <body>
+      <p> Input your a, b, and c values <p>
+  <p><input type = "text" id = "a">x^2 + <input type = "text" id = "b">x + <input type = "text" id = "c"></p>
+    <button type="press" onclick="equasionSolve()">Find Roots</button>
+  <div id="div"></div>
+
   </body>
 </html>
