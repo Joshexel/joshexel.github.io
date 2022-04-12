@@ -22,7 +22,8 @@
   </head>
   <body>
       <p> Input your a, b, and c values <p>
-  <p><input type = "text" id = "a">x^2 <input type = "text" id = "b">x <input type = "text" id = "c"></p>
+  <p><input type = "text" id = "a">x^2 + <input type = "text" id = "b">x + <input type = "text" id = "c"></p>
+    <button type="press" onclick="equasionsolve()">Find Roots</button>
   <div id="div"></div>
 <script>    function equasionSolve (){
     var a = document.getElementById("a").value;
@@ -45,15 +46,3 @@
 </script>
   </body>
 </html>
-
-
-
-//Find the vertex
-//aOS = minusB/twoA
-//yValue = aOS*aOS*a + aOS*b + c
-
-//if x1 == x2:
-    //print(x1, "is the only real root")
-//else:
-    //print(x1, "and", x2, "are your answers")
-//print("and", aOS, ",", yValue, "is your vertex")
