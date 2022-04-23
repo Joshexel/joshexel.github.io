@@ -27,21 +27,31 @@
     var bSquared = b * b
     var fourAC = 4 * a * c
     var inSqrt = bSquared - fourAC
-    var outSqrt = sqrt(inSqrt)
+    if (inSqrt < 0){
+      var outSqrt = Math.sqrt(inSqrt*-1)
+      var plusAns = minusB + outSqrt
+      var minusAns = minusB - outSqrt
+      var twoA = a * 2
+      var x1 = minusAns/twoA
+      var x2 = plusAns/twoA
+      document.getElementById("div").innerHTML = x1 + "i and " + x2 + "i are your roots";
+    }
+    else{
+    var outSqrt = Math.sqrt(inSqrt)
     var plusAns = minusB + outSqrt
     var minusAns = minusB - outSqrt
     var twoA = a * 2
     var x1 = minusAns/twoA
     var x2 = plusAns/twoA
-
-    document.getElementById("div").innerHTML = x1 + " and " x2 + " are your roots;
+    document.getElementById("div").innerHTML = x1 + " and " + x2 + " are your roots";
+    }
 }
 </script>
   </head>
   <body>
       <p> Input your a, b, and c values <p>
   <p><input type = "text" id = "a">x^2 + <input type = "text" id = "b">x + <input type = "text" id = "c"></p>
-    <button type="press" onclick="equasionSolve()">Find Roots</button>
+    <button type="press" onclick=equasionSolve()>Find Roots</button>
   <div id="div"></div>
 
   </body>
